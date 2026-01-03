@@ -11,7 +11,12 @@ const app=express();
 dotenv.config()
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
-app.use(cors());
+app.use(cors({
+     origin: [
+    "http://localhost:7000",
+    "http://localhost:5173"
+  ],
+}));
 app.use(cookieParser())
 app.use("/user",userRoute);
 app.use("/captain",captainRoute);
