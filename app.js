@@ -13,8 +13,8 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(cors({
      origin: [
-    "http://localhost:7000",
-    "http://localhost:5173"
+        process.env.VITE_FRONTEND_URL,
+        "http://localhost:5173"
   ],
 }));
 app.use(cookieParser())
